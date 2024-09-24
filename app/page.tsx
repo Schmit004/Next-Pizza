@@ -1,7 +1,9 @@
+import { Container, Title } from "@/components/shared";
+
 export default function Home() {
   return (
-    <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-       <h1>Home</h1>
-    </main>
+    <Container className="mt-10">
+      <Title text="Все пиццы" size="lg" className="font-extrabold" />
+    </Container>
   );
 }
