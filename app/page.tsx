@@ -1,4 +1,5 @@
-import { Container, Title, TopBar } from "@/components/shared";
+import { Suspense } from "react";
+import { Container, Filters, Title, TopBar } from "@/components/shared";
 
 export default function Home() {
   return (
@@ -6,8 +7,26 @@ export default function Home() {
       <Container className="mt-10">
         <Title text="Все пиццы" size="lg" className="font-extrabold" />
       </Container>
+
       <TopBar />
-      <div className="h-[2000px]"></div>
+
+      <Container className="mt-10 pb-14">
+        <div className="flex gap-[80px]">
+          {/* Фильтрация */}
+          <div className="w-[250px]">
+            <Suspense>
+              <Filters />
+            </Suspense>
+          </div>
+
+          {/* Список товаров */}
+          <div className="flex-1">
+            <div className="flex flex-col gap-16">
+              Список товаров
+            </div>
+          </div>
+        </div>
+      </Container>
     </>
 
   );
