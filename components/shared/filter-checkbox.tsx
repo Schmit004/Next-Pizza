@@ -1,7 +1,7 @@
 import React from 'react';
 import { Checkbox } from '../ui/checkbox';
 
-export interface FilterChecboxProps {
+export interface FilterCheckboxProps {
   text: string;
   value: string;
   name?: string;
@@ -10,7 +10,7 @@ export interface FilterChecboxProps {
   onCheckedChange?: (checked: boolean) => void;
 }
 
-export const FilterCheckbox: React.FC<FilterChecboxProps> = ({
+export const FilterCheckbox: React.FC<FilterCheckboxProps> = ({
   text,
   value,
   name,

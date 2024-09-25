@@ -5,10 +5,20 @@ import { Title } from './title';
 import { FilterCheckbox } from './filter-checkbox';
 import { Input } from '../ui';
 import { RangeSlider } from './range-slider';
+import { CheckboxFiltersGroup } from './checkbox-filters-group';
 
 interface Props {
   className?: string;
 }
+
+const INGREDIENTS = [
+  { text: 'Сырный соус', value: '3' },
+  { text: 'Моццарелла', value: '4' },
+  { text: 'Чеснок', value: '5' },
+  { text: 'Солённые огурчики', value: '6' },
+  { text: 'Красный лук', value: '7' },
+  { text: 'Томаты', value: '8' },
+]
 
 export const Filters: React.FC<Props> = ({ className }) => {
   return (
@@ -29,6 +39,14 @@ export const Filters: React.FC<Props> = ({ className }) => {
 
         <RangeSlider min={0} max={1000} step={10} value={[0, 1000]} />
       </div>
+
+      <CheckboxFiltersGroup
+        title="Ингредиенты"
+        items={INGREDIENTS}
+        defaultItems={INGREDIENTS.slice(0, 5)}
+        limit={5}
+        className="mt-5"
+      />
     </div>
   );
 };
