@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Container, Filters, Title, TopBar } from "@/components/shared";
+import { ProductsGroupList } from "@/components/shared/products-group-list";
 
 export default function Home() {
   return (
@@ -22,7 +23,94 @@ export default function Home() {
           {/* Список товаров */}
           <div className="flex-1">
             <div className="flex flex-col gap-16">
-              Список товаров
+              <ProductsGroupList title="Пицца" categoryId={1} items={[
+                {
+                  id: 1,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+                {
+                  id: 2,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+                {
+                  id: 3,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+                {
+                  id: 4,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+                {
+                  id: 5,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+                {
+                  id: 6,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+              ]} />
+              <ProductsGroupList title="Комбо" categoryId={2} items={[
+                {
+                  id: 1,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+                {
+                  id: 2,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+                {
+                  id: 3,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+                {
+                  id: 4,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+                {
+                  id: 5,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+                {
+                  id: 6,
+                  name: "Пепперони",
+                  imageUrl: "/pizza.jpg",
+                  types: [{ price: 500 }],
+                  ingredients: ["Сырный соус", "Моццарелла", "Чеснок", "Солённые огурчики", "Красный лук", "Томаты"]
+                },
+              ]} />
             </div>
           </div>
         </div>
