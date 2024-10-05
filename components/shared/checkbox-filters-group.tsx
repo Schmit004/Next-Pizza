@@ -8,6 +8,7 @@ import { Skeleton } from '../ui';
 type Item = FilterCheckboxProps;
 
 interface Props {
+  className?: string;
   title: string;
   items: Item[];
   defaultItems?: Item[];
@@ -17,7 +18,6 @@ interface Props {
   selected?: Set<string>;
   defaultValue?: string[];
   searchInputPlaceholder?: string;
-  className?: string;
   onClickCheckbox?: (id: string) => void;
 }
 
