@@ -5,21 +5,13 @@ import { Title } from './title';
 import { ProductCard } from './product-card';
 import { useIntersection } from 'react-use';
 import { useCategoryStore } from '@/store';
+import { ProductWithRelations } from '@/@types/prisma';
 import { cn } from '@/lib/utils';
-
-interface TempItems {
-  id: number;
-  name: string;
-  types: { price: number }[];
-  imageUrl: string;
-  ingredients: string[];
-  className?: string;
-}
 
 interface Props {
   title: string;
   categoryId: number;
-  items: TempItems[];
+  items: ProductWithRelations[];
   className?: string;
   listClassName?: string;
 }
@@ -53,7 +45,7 @@ export const ProductsGroupList: React.FC<Props> = ({
             key={product.id}
             id={product.id}
             name={product.name}
-            price={product.types[0].price}
+            price={product.items[0].price}
             imageUrl={product.imageUrl}
             ingredients={product.ingredients}
           />
