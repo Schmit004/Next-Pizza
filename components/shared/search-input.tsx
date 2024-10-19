@@ -73,9 +73,9 @@ export const SearchInput: React.FunctionComponent<Props> = ({ className }) => {
               >
                 <Image
                   className="rounded-sm h-8 w-8"
+                  src={product.imageUrl}
                   width={32}
                   height={32}
-                  src={product.imageUrl}
                   alt={product.name}
                 />
                 <span>{product.name}</span>

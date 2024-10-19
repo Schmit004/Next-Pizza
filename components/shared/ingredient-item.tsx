@@ -29,7 +29,7 @@ export const IngredientItem: React.FC<Props> = ({
       )}
       onClick={onClick}>
       {active && <CircleCheck className="absolute top-2 right-2 text-primary" />}
-      <Image width={110} height={110} src={imageUrl} alt="Ingredient image"/>
+      <Image src={imageUrl} width={110} height={110} alt="Ingredient image"/>
       <span className="text-xs mb-1">{name}</span>
       <span className="font-bold">{price} ₽</span>
     </div>
