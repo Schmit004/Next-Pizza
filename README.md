@@ -29,15 +29,53 @@ pnpm dev
 
 Использованные библиотеки и технологии:
 
-- shadcn-ui - готовые ui компоненты;
-- tailwind - библиотека для стилизация компонентов;
-- zustand - стейт менеджер.
+- **shadcn-ui** - готовые ui компоненты;
+- **tailwind** - библиотека для стилизация компонентов;
+- **zustand** - стейт менеджер.
 
 ## Backend
 
 Использованные библиотеки и технологии:
 
-- prisma  - ORM для работы с БД;
-- next auth - библиотека для авторизации пользователей.
+- **prisma** - ORM для работы с БД;
+- **next auth** - библиотека для авторизации пользователей.
 
 БД разворачивается на платформе Vercel.
+
+## Памятка
+
+### Получение параметров URL в Next.js
+
+**Серверные компоненты - через props:**
+
+```tsx
+export default function Page(props: {
+  params: { [key: string]: string },
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
+  // ID из динамического маршрута
+  const id = props.params.id
+
+  // Query параметры
+  const query = props.searchParams.search
+}
+```
+- *Работает только для Page компонентов (файлы page.tsx/page.jsx)*
+- *Props предоставляется фреймворком автоматически*
+
+**Клиентские компоненты - через хуки `useParams()` и `useSearchParams()`:**
+
+```tsx
+'use client'
+import { useParams, useSearchParams } from 'next/navigation'
+
+export default function ClientPage() {
+  // ID из динамического маршрута
+  const params = useParams()
+  const id = params.id
+
+  // Query параметры
+  const searchParams = useSearchParams()
+  const query = searchParams.get('search')
+}
+```
