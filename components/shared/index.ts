@@ -4,6 +4,8 @@ export { CartDrawer } from "./cart-drawer";
 export { Categories } from "./categories";
 export { CheckboxFiltersGroup } from "./checkbox-filters-group";
 export { CheckoutItemDetails } from "./checkout-item-details";
+export { CheckoutItemSkeleton } from "./checkout-item-skeleton";
+export { CheckoutItem } from "./checkout-item";
 export { CheckoutSidebar } from "./checkout-sidebar";
 export { ChoosePizzaForm } from "./choose-pizza-form";
 export { ChooseProductForm } from "./choose-product-form";
