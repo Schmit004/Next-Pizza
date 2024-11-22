@@ -3,6 +3,8 @@ export { CartDrawerItem } from "./cart-drawer-item";
 export { CartDrawer } from "./cart-drawer";
 export { Categories } from "./categories";
 export { CheckboxFiltersGroup } from "./checkbox-filters-group";
+export { CheckoutItemDetails } from "./checkout-item-details";
+export { CheckoutSidebar } from "./checkout-sidebar";
 export { ChoosePizzaForm } from "./choose-pizza-form";
 export { ChooseProductForm } from "./choose-product-form";
 export { Container } from "./container";
