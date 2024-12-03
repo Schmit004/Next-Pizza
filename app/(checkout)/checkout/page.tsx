@@ -11,6 +11,7 @@ import {
   CheckoutSidebar,
 } from '@/components/shared';
 import { useCart } from '@/hooks';
+import { createOrder } from '@/app/actions';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { CheckoutFormValues, checkoutFormSchema } from '@/constants';
@@ -31,10 +32,15 @@ export default function CheckoutPage() {
     },
   });
 
-  const onSubmit = async () => {
+  const onSubmit = async (data: CheckoutFormValues) => {
     try {
       setSubmitting(true);
+      const url = await createOrder(data);
       toast.success('Заказ успешно оформлен! 📝 Переход на оплату... ', { icon: '✅' });
+
+      if (url) {
+        location.href = url;
+      }
     } catch (err) {
       console.log(err);
       setSubmitting(false);
