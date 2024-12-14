@@ -2,11 +2,11 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Button } from '@/components';
+import { Button } from '@/components/ui/button';
 import { signIn } from 'next-auth/react';
 import { LoginForm } from './forms/login-form';
 import { RegisterForm } from './forms/register-form';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent } from '@/components/ui';
 
 interface Props {
   open: boolean;
