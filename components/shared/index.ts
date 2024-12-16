@@ -25,6 +25,7 @@ export { ProductCard } from "./product-card";
 export { ProductForm } from "./product-form";
 export { ProductsGroupList } from "./products-group-list";
 export { ProfileButton } from "./profile-button";
+export { ProfileForm } from "./profile-form";
 export { Providers } from "./providers";
 export { RangeSlider } from "./range-slider";
 export { RequiredSymbol } from "./required-symbol";
