@@ -2,16 +2,16 @@
 
 import React from 'react';
 import toast from 'react-hot-toast';
+import { signOut } from 'next-auth/react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { updateUserInfo } from '@/app/actions';
 import { TFormRegisterValues, formRegisterSchema } from './modals/auth-modal/forms/schemas';
 import { User } from '@prisma/client';
-import { signOut } from 'next-auth/react';
 import { Container } from './container';
 import { Title } from './title';
 import { FormInput } from './form';
 import { Button } from '../ui';
-import { updateUserInfo } from '@/app/actions';
-import { zodResolver } from '@hookform/resolvers/zod';
 
 interface Props {
   data: User;

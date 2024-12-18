@@ -15,10 +15,13 @@ import { createOrder } from '@/app/actions';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { CheckoutFormValues, checkoutFormSchema } from '@/constants';
+import { useSession } from 'next-auth/react';
+import { Api } from '@/services/api-client';
 
 export default function CheckoutPage() {
   const [submitting, setSubmitting] = React.useState(false);
   const { totalAmount, updateItemQuantity, items, removeCartItem, loading } = useCart();
+  const { data: session } = useSession();
 
   const form = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutFormSchema),
@@ -32,6 +35,21 @@ export default function CheckoutPage() {
     },
   });
 
+  React.useEffect(() => {
+    async function fetchUserInfo() {
+      const data = await Api.auth.getMe();
+      const [firstName, lastName] = data.fullName.split(' ');
+
+      form.setValue('firstName', firstName);
+      form.setValue('lastName', lastName);
+      form.setValue('email', data.email);
+    }
+
+    if (session) {
+      fetchUserInfo();
+    }
+  }, [form, session]);
+
   const onSubmit = async (data: CheckoutFormValues) => {
     try {
       setSubmitting(true);
@@ -42,7 +60,7 @@ export default function CheckoutPage() {
         location.href = url;
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
       setSubmitting(false);
       toast.error('Не удалось создать заказ', { icon: '❌' });
     }
