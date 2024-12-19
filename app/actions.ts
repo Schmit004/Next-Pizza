@@ -1,7 +1,7 @@
 'use server';
 
 import { prisma } from '@/prisma/prisma-client';
-import { PayOrderTemplate, VerificationUserTemplate } from '@/components';
+import { PayOrderTemplate, VerificationUserTemplate } from '@/components/shared';
 import { CheckoutFormValues } from '@/constants';
 import { createPayment, sendEmail } from '@/lib';
 import { getUserSession } from '@/lib/get-user-session';

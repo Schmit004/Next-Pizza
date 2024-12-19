@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { PaymentCallbackData } from '@/@types/yookassa';
 import { prisma } from '@/prisma/prisma-client';
 import { OrderStatus } from '@prisma/client';
-import { OrderSuccessTemplate } from '@/components/';
+import { OrderSuccessTemplate } from '@/components/shared';
 import { CartItemDTO } from '@/services/dto/cart.dto';
 import { sendEmail } from '@/lib';
 
