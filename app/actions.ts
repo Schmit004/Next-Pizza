@@ -1,7 +1,8 @@
 'use server';
 
 import { prisma } from '@/prisma/prisma-client';
-import { PayOrderTemplate, VerificationUserTemplate } from '@/components/shared';
+import { PayOrderTemplate } from '@/components/shared';
+import { VerificationUserTemplate } from '@/components/shared/email-templates/verification-user';
 import { CheckoutFormValues } from '@/constants';
 import { createPayment, sendEmail } from '@/lib';
 import { getUserSession } from '@/lib/get-user-session';
@@ -182,9 +183,7 @@ export async function registerUser(body: Prisma.UserCreateInput) {
     await sendEmail(
       createdUser.email,
       'Next Pizza / 📝 Подтверждение регистрации',
-      VerificationUserTemplate({
-        code,
-      }),
+      VerificationUserTemplate({ code }),
     );
   } catch (err) {
     console.log('Error [CREATE_USER]', err);

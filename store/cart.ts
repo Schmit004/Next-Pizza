@@ -19,7 +19,7 @@ export interface CartState {
 export const useCartStore = create<CartState>((set) => ({
   items: [],
   error: false,
-  loading: false,
+  loading: true,
   totalAmount: 0,
 
   fetchCartItems: async () => {

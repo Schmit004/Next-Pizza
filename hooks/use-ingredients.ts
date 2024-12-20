@@ -13,7 +13,7 @@ export const useIngredients = () => {
         const ingredients = await Api.ingredients.getAll();
         setIngredients(ingredients);
       } catch (err) {
-        console.log(err);
+        console.error(err);
       } finally {
         setLoading(false);
       }
